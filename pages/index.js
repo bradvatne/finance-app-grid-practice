@@ -11,10 +11,12 @@ export default function Home() {
       <div className="grid">
         <div className="left">...</div>
         <div className="center">
+          <div className="title">
           <h1>...</h1>
           <p className="date">
             <span className="grey">... </span>
           </p>
+          </div>
           <div className="icons">
             <div className="icon-item">...</div>
             <div className="icon-item">...</div>
