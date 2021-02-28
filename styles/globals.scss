@@ -23,7 +23,7 @@ html {
 $margins: 25px;
 $border-radius: 15px;
 $padding: 25px;
-$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 
 @mixin box-styles {
   border-radius: $border-radius;
@@ -49,10 +49,33 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
 
+
+/* RIGHT ELEMENTS */
+
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.account {
+  text-align: right;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: $padding;
+  line-height: 52px;
+  height: 100px;
+}
+.icons {
+  text-align: center;
+}
+
+
+//Full screen
 @media (min-width: 1001px) {
   .grid {
     display: grid;
-    grid-template-columns: 300px auto 400px;
+    grid-template-columns: 200px auto 400px;
     grid-gap: $margins;
     margin: $margins;
     box-shadow: $box-shadow;
@@ -65,9 +88,8 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-gap: 25px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 75px 125px 225px 1fr;
+    grid-template-rows: 75px 125px 200px 1fr;
     margin-bottom: $margins;
-    min-height: 850px;
   }
 
   .left {
@@ -80,15 +102,14 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 0;
   }
 
-  /*CENTER ELEMENTS*/
+  /*CENTER GRID ELEMENTS*/
 
   .title {
     grid-column: 1/3;
-    padding: 25px;
   }
 
-  .grey {
-    color: rgb(88, 88, 88);
+  .overview {
+    grid-column: 1/3;
   }
 
   .icons {
@@ -96,14 +117,10 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-column: 1/3;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    text-align: center;
-  }
-
-  .overview {
-    grid-column: 1/3;
   }
 }
 
+//Small screen / mobile view - Single column layout
 @media (max-width: 1000px) {
   .grid {
     width: 90%;
@@ -120,12 +137,10 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .left {
-    min-height: 0px;
     height: 80px;
   }
 
   .right {
-    min-height: 0;
     height: 300px;
   }
 
@@ -136,8 +151,17 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: $margins;
     height: 300px;
   }
+
+  .icon-item {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
+
+//Adjust center elements for smaller screens, makes single-column layout
 @media (max-width: 1300px) {
   .center {
     grid-template-columns: auto;
@@ -153,19 +177,9 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 
-/* RIGHT ELEMENTS */
-
-.user {
-  display: flex;
-  justify-content: space-between;
-}
-.account {
-  text-align: right;
-}
-
-.title {
-  display: flex;
-  justify-content: space-between;
-  padding: $padding;
-  line-height: 52px;
+//Height query because no placeholder
+@media (min-height: 900px) and (min-width: 1001px) {
+  .right {
+    height: 800px;
+  }
 }

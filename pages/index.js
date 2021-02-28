@@ -14,7 +14,7 @@ export default function Home() {
           <div className="title">
           <h1>...</h1>
           <p className="date">
-            <span className="grey">... </span>
+            ...
           </p>
           </div>
           <div className="icons">
