@@ -1,1 +1,1 @@
-Practicing responsive grid layout inspired by SELECTO on Dribble: https://dribbble.com/shots/15197323-Home-finances-dashboard/attachments/6940843?mode=media
+Practicing responsive grid layout + Sass, inspired by SELECTO on Dribble: https://dribbble.com/shots/15197323-Home-finances-dashboard/attachments/6940843?mode=media

@@ -1,21 +1,18 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div className="app-container">
       <Head>
-        <title>Finance Grid Practice</title>
+        <title>Sass Grid Practice</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">
         <div className="left">...</div>
         <div className="center">
           <div className="title">
-          <h1>...</h1>
-          <p className="date">
-            ...
-          </p>
+            <h1>...</h1>
+            <p className="date">...</p>
           </div>
           <div className="icons">
             <div className="icon-item">...</div>
@@ -25,9 +22,7 @@ export default function Home() {
           </div>
           <div className="balance">...</div>
           <div className="expenses">...</div>
-          <div className="overview">
-            ...
-          </div>
+          <div className="overview">...</div>
         </div>
 
         <div className="right">
