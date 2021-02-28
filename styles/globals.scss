@@ -1,0 +1,171 @@
+html,
+body,
+div,
+h1,
+p {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+$margins: 25px;
+$border-radius: 15px;
+$padding: 25px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+@mixin box-styles {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: white;
+  padding: $padding;
+}
+
+.left,
+.right,
+.icons,
+.balance,
+.expenses,
+.overview {
+  @include box-styles;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1001px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 300px auto 400px;
+    grid-gap: $margins;
+    margin: $margins;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 1400px;
+  }
+
+  .center {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 125px 225px 1fr;
+    margin-bottom: $margins;
+    min-height: 850px;
+  }
+
+  .left {
+    margin: $margins;
+    margin-right: 0;
+  }
+
+  .right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /*CENTER ELEMENTS*/
+
+  .title {
+    grid-column: 1/3;
+    padding: 25px;
+  }
+
+  .grey {
+    color: rgb(88, 88, 88);
+  }
+
+  .icons {
+    @include box-styles;
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+  }
+
+  .overview {
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 600px 300px;
+    height: 100%;
+    padding: 25px 0 25px 0;
+  }
+
+  .icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 125px 125px;
+  }
+
+  .left {
+    min-height: 0px;
+    height: 80px;
+  }
+
+  .right {
+    min-height: 0;
+    height: 300px;
+  }
+
+  .icons,
+  .balance,
+  .expenses,
+  .overview {
+    margin-bottom: $margins;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .center {
+    grid-template-columns: auto;
+    grid-template-rows: 75px 125px 125px 125px 1fr;
+  }
+
+  .expenses {
+    grid-column: 1/3;
+  }
+
+  .balance {
+    grid-column: 1/3;
+  }
+}
+
+/* RIGHT ELEMENTS */
+
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.account {
+  text-align: right;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: $padding;
+  line-height: 52px;
+}
